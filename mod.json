@@ -1,0 +1,13 @@
+{
+	"geode": "4.2.1",
+	"gd": {
+		"win": "2.2074",
+		"mac": "2.2074"
+	},
+	"id": "prevter.vapor",
+	"name": "Vapor",
+	"version": "v1.0.0",
+	"developer": "prevter",
+	"description": "crack mod is crazy",
+	"early-load": true
+}
