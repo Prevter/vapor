@@ -16,7 +16,7 @@ endif()
 
 add_subdirectory($ENV{GEODE_SDK} ${CMAKE_CURRENT_BINARY_DIR}/geode)
 
-CPMAddPackage("gh:prevter/sinaps#1663e86")
+CPMAddPackage("gh:prevter/sinaps#b9c3434")
 target_link_libraries(${PROJECT_NAME} sinaps)
 
 setup_geode_mod(${PROJECT_NAME})

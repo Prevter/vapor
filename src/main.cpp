@@ -38,7 +38,8 @@ $on_mod(Loaded) {
         GEODE_ARM_MAC("22 00 80 52 ? ? ? ? ? ? ? ? ^ ? ? ? ? ? ? 00 36")
     >(base, size);
 
-    if (offset == -1) return log::error("Failed to find address");
+    if (offset == sinaps::not_found)
+        return log::error("Failed to find address");
 
     auto addr = reinterpret_cast<void*>(base + offset);
     std::vector<uint8_t> bytes = {
@@ -47,7 +48,7 @@ $on_mod(Loaded) {
         GEODE_ARM_MAC(0x1F, 0x20, 0x03, 0xD5, 0x1F, 0x20, 0x03, 0xD5)
     };
 
-    if (!Mod::get()->patch(addr, bytes)) {
+    if (!Mod::get()->patch(addr, std::move(bytes))) {
         log::error("Failed to patch");
     }
 }
