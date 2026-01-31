@@ -28,7 +28,7 @@ size_t baseSize() {
     return size;
 }
 
-$on_mod(Loaded) {
+$execute {
     auto base = reinterpret_cast<uint8_t*>(base::get());
     auto size = baseSize();
 
